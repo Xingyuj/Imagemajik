@@ -31,6 +31,7 @@ gem install rails
 brew install ImageMagick
 ```
 5. Install dependencies
+
   ```
 gem install bundler
 gem update bundler
