@@ -15,11 +15,13 @@ Installing the project:
   git clone https://XingyuJi@bitbucket.org/XingyuJi/ebuy-shopping-centre.git
   ```
 2. move into the repository directory
-```
-cd Imagemajik
-```
+  
+  ```
+  cd Imagemajik
+  ```
 3. Install Rails
-```
+  
+  ```
 gem install rails
 ```
 4. install imagemagick
