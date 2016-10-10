@@ -17,7 +17,7 @@ Installing the project:
 2. move into the repository directory
   
   ```
-  cd Imagemajik
+cd Imagemajik
   ```
 3. Install Rails
   
@@ -25,11 +25,11 @@ Installing the project:
 gem install rails
 ```
 4. install imagemagick
-```
+  ```
 brew install ImageMagick
 ```
 5. Install dependencies
-```
+  ```
 gem install bundler
 gem update bundler
 gem install rmagick
