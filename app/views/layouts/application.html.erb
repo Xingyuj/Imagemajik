@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Majik</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
+  <div class="container">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-links">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to "Image Majik", my_userimages_path, class: "navbar-brand emph" %>
+    <div class="collapse navbar-collapse" id="navbar-links">
+      <ul class="nav navbar-nav">
+        <% if user_signed_in? %>
+            <li><%= link_to "Upload", new_userimage_path %></li>
+            <li><%= link_to "My Images", my_userimages_path %></li>
+            <li><%= link_to "My Trash", trash_path %></li>
+            <li><%= link_to "Share To Me", sharetome_path %></li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+            <li><%= link_to current_user.email, edit_user_registration_path %></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+            <li><%= link_to "Register", new_user_registration_path %></li>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <%= yield %>
+</div>
+</body>
+</html>

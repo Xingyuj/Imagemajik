@@ -1,0 +1,36 @@
+  <tbody>
+  <h3 align="center">Share To Me</h3>
+  <p style="text-align:center" class="notice"><%= notice %></p>
+  <p style="text-align:center" class="alert"><%= alert %></p>
+  <% @shareimages.each do |image| %>
+      <% if image %>
+          <div class="showBox">
+            <div class="box">
+              </br>
+
+              <div class="panel panel-default" style="width: 85%">
+                <div class="panel-heading">Title:    <%= image.title %></div>
+                <div class="panel-body">
+                  Description:    <%= image.description %>
+                </div>
+              </div>
+
+              <div><%= image_tag image.image_url(:thumb).to_s %></div>
+              <% if user_signed_in? %>
+                  <br/>
+
+                  <form action="/share" method="get">
+                    Share to: <input class="form-control" style="width: 86%" type="text" name="email">
+                    <br/>
+                    <input type="hidden" name="id" value="<%= image.id %>">
+                    <input type="submit" value="Share" class="btn btn-default">
+                    <%= link_to 'Edit', edit_userimage_path(image), class: "btn btn-primary" %>
+                    <%= link_to 'Cancel Share', cancelshare_path(image.id), class: "btn btn-danger" %>
+                  </form>
+              <% end %>
+      <% end %>
+      </div>
+      <br/><br/>
+      </div>
+  <% end %>
+  </tbody>

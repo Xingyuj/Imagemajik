@@ -1,0 +1,63 @@
+<div class="sidebar">
+  <div class="row">
+    <div class="span6">
+      <ul class="nav nav-list">
+        <br/>
+        <li><%= link_to 'Raise', {:controller =>'userimages', :action => 'applyfilter', :type => 'raise', :id => @userimage}, class: "btn btn-default" %>
+        </li>
+        <br/>
+        <li><%= link_to 'Radial', {:controller =>'userimages', :action => 'applyfilter', :type => 'radial', :id => @userimage}, class: "btn btn-default" %>
+        </li>
+        <br/>
+        <li><%= link_to 'Radial', {:controller =>'userimages', :action => 'applyfilter', :type => 'radial', :id => @userimage}, class: "btn btn-default" %>
+        </li>
+        <br/>
+        <li><%= link_to 'Ink', {:controller =>'userimages', :action => 'applyfilter', :type => 'ink', :id => @userimage}, class: "btn btn-default" %>
+        </li>
+        <br/>
+        <li><%= link_to 'Roll', {:controller =>'userimages', :action => 'applyfilter', :type => 'roll', :id => @userimage}, class: "btn btn-default" %>
+        </li>
+        <br/>
+        <li><%= link_to 'Sketch', {:controller =>'userimages', :action => 'applyfilter', :type => 'sketch', :id => @userimage}, class: "btn btn-default" %>
+        </li>
+        <br/>
+        <li><%= link_to 'Spread', {:controller =>'userimages', :action => 'applyfilter', :type => 'spread', :id => @userimage}, class: "btn btn-default" %>
+        </li>
+        <br/>
+        <li><%= link_to 'Vignette', {:controller =>'userimages', :action => 'applyfilter', :type => 'vignette', :id => @userimage}, class: "btn btn-default" %>
+        </li>
+        <br/>
+        <li><%= link_to 'Shade', {:controller =>'userimages', :action => 'applyfilter', :type => 'shade', :id => @userimage}, class: "btn btn-default" %>
+        </li>
+        <br/>
+        <li><%= link_to 'Wave', {:controller =>'userimages', :action => 'applyfilter', :type => 'wave', :id => @userimage}, class: "btn btn-default" %>
+        </li>
+        <br/>
+        <li><%= link_to 'Stamp', {:controller =>'userimages', :action => 'applyfilter', :type => 'stamp', :id => @userimage}, class: "btn btn-default" %>
+        </li>
+        <br/>
+        <li><%= link_to 'Cancel', {:controller =>'userimages', :action => 'edit', :id => @userimage}, class: "btn btn-warning" %>
+        </li>
+        <br/>
+      </ul>
+    </div>
+  </div>
+</div>
+  <div class="picture"><%= image_tag @userimage.image_url.to_s %></div>
+<div class="picture">
+  <br/> <br/>
+  <form action="/saveimage/<%= @userimage.id %>" method="get">
+    <div class="panel panel-default" style="width: 50%">
+  <div class="panel-heading">Title</div>
+    <div class="panel-body"><input class="form-control" type="text" name="title" value="<%=@userimage.title%>"></div>
+    </div>
+    <div class="panel panel-default" style="width: 50%">
+    <div class="panel-heading">Description</div>
+      <div class="panel-body"> <input class="form-control" type="text" name="description" value="<%=@userimage.description%>"></div>
+    </div>
+  <input type="hidden" name="imageurl" value="<%=@userimage.image_url.to_s%>" >
+  <input type="hidden" name="filtertype" value= <%= @type %> >
+  <input type="submit" class="btn btn-primary" value="Save Changes">
+  <%= link_to 'Back', my_userimages_path, class: "btn btn-default" %>
+</form>
+</div>

@@ -1,0 +1,25 @@
+    <tbody>
+    <h3 align="center">My Trash</h3>
+    <p style="text-align:center" class="notice"><%= notice %></p>
+    <p style="text-align:center" class="alert"><%= alert %></p>
+    <% @userimages.each do |image| %>
+        <div class="showBox">
+          <div class="box">
+            </br>
+            <div class="panel panel-default" style="width: 85%">
+              <div class="panel-heading">Title:    <%= image.title %></div>
+              <div class="panel-body">
+                Description:    <%= image.description %>
+              </div>
+            </div>
+            <div><%= image_tag image.image_url(:thumb).to_s %></div>
+            <br/>
+            <% if user_signed_in? %>
+                <%= link_to 'Restore', restore_path(image), class: "btn btn-primary" %>
+                <%= link_to 'Delete', image, method: :delete, data: { confirm: 'Are you sure? It will delete it permanently' }, class: "btn btn-danger"%>
+          <% end %>
+            </div>
+          <br/><br/>
+    </div>
+    <% end %>
+    </tbody>
