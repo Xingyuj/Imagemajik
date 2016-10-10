@@ -10,10 +10,8 @@ Dependencies:
 Installing the project:
 
 1. clone the repo
-```
-git clone https://XingyuJi@bitbucket.org/XingyuJi/ebuy-shopping-centre.git
-```
-  
+
+
 2. move into the repository directory
 ```
 git clone https://XingyuJi@bitbucket.org/XingyuJi/ebuy-shopping-centre.git
