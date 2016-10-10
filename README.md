@@ -24,7 +24,9 @@ cd Imagemajik
   ```
 gem install rails
 ```
+
 4. install imagemagick
+
   ```
 brew install ImageMagick
 ```
